@@ -26,15 +26,18 @@ If your README is long, add a table of contents to make it easy for users to fin
 # Installation
 
 Link to video demonstration how this application works:
-https://drive.google.com/file/d/13Wi25qLBlX8RQuU2vu-ZwW8qSMlAgd3g/view
+
+[Version 1 Video, pre repeat() function](https://drive.google.com/file/d/1fvE6Ljvry9DV7eP8PaTQXCAv4YU1O7CI/view?usp=sharing)
+
+[Version 2 Video, post repeat() function](https://drive.google.com/file/d/1AHeMJXj4cfLfohONvgtQjokRUWX8DCxs/view?usp=sharing)
               
 
-Step 1.) Clone this repository.,
-Step 2.) NPM i to install predetermined node packages.,
-Step 3.) Replace the password in server.js with your own MySql password.,
-Step 4.) Navigate to the DB folder, and install/run schema.sql via terminal,
+Step 1.) Clone this repository.
+Step 2.) NPM i to install predetermined node packages.
+Step 3.) Replace the password in server.js with your own MySql password.
+Step 4.) Navigate to the DB folder, and install/run schema.sql via terminal
 Step 5.) In that same folder, install/run seed.sql via SOURCE seed.sql,
-Step 6.) Open up server.js in bash terminal, use node server.js to run the inquirer prompts,
+Step 6.) Open up server.js in bash terminal, use node server.js to run the inquirer prompts
 Step 7.) Close out the program and restart whenever you finish a prompt path. I know, I need to work on recycling through.
              
                      
