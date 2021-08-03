@@ -2,7 +2,8 @@
 # Employee_Tracker
 ![NPM](https://img.shields.io/npm/l/inquirer)
 
-[LIVE DEPLOY](https://JMagic-Learner.github.io/Employee_Tracker)
+[Version 1 Video, pre repeat() function](https://drive.google.com/file/d/1fvE6Ljvry9DV7eP8PaTQXCAv4YU1O7CI/view?usp=sharing)
+[Version 2 Video, post repeat() function](https://drive.google.com/file/d/1AHeMJXj4cfLfohONvgtQjokRUWX8DCxs/view?usp=sharing)
 ## Description
 Hello, my name is Jason Ma. This application is called Employee_Tracker.
               
