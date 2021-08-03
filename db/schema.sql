@@ -37,10 +37,10 @@ CREATE TABLE employees (
     
     FOREIGN KEY (department_name)
         REFERENCES department (department_name)
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
 
---    FOREIGN KEY (job_title)
---     REFERENCES roles (job_title)
---       ON DELETE CASCADE
+   FOREIGN KEY (job_title)
+    REFERENCES roles (job_title)
+      ON DELETE CASCADE
    
 );

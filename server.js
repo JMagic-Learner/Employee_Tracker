@@ -2,9 +2,10 @@ const express = require('express');
 const mysql = require('mysql2');
 
 const inquirer = require('inquirer');
+
 //const sequelize = require('./config/connection');
 
-
+let iteration = 0;
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -95,6 +96,7 @@ function directory() {
             if (response.license === 0) {
                 console.log("You have chosen to view all departments.");
                 displayDepartments();
+              
             
             } else if (response.license === 1) {
                 console.log("You have chosen to view all employeess");
@@ -119,7 +121,7 @@ function directory() {
                 console.log("Searching for commanders");
                 showMANAGER();
             }
-            
+           
         });
 
 }
@@ -163,6 +165,9 @@ function writeUpdateDepartment(updateDepartmentAnswers) {
               VALUES ( ${department_id}, "${department_name}", "${department_location}") `, function (err, results) {
                 
     });
+   
+    displayDepartments();
+    repeat()
     
 }
 
@@ -297,7 +302,9 @@ function writeUpdateEmployee(updateEmployeeAnswers) {
               VALUES ( "${first_name}", "${last_name}", "${job_title}" , ${role_id} ,"${department_name}", ${salaries}, ${manager}, "${active_status}") `, function (err, results) {
                 
     });
+    
     displayEmployees();
+    repeat();
 }
 
 async function updateRoles(response) {
@@ -349,7 +356,10 @@ function writeUpdateRoles(updateRoleAnswers) {
               VALUES ( "${job_title}", ${role_id}, "${role_department}", ${salaries}) `, function (err, results) {
    
     });
+  
     displayRoles();
+    repeat();
+  
 }
 
 function purge() {
@@ -387,6 +397,7 @@ function displayDepartments() {
     console.log("Showing SCP directory");
     db.query('SELECT * FROM department', function (err, results) {
         console.table(results);
+        repeat();
     });
 }
 
@@ -394,6 +405,7 @@ function displayEmployees() {
     console.log("Displaying SCP personnel.");
     db.query('SELECT * FROM employees', function (err, results) {
         console.table(results);
+        repeat()
     });
 }
 
@@ -401,8 +413,29 @@ function displayRoles() {
     console.log("Displaying SCP role delegation.");
     db.query('SELECT * FROM roles', function (err, results) {
         console.table(results);
+        repeat()
     });
 }
 
 directory();
 
+function stop() {
+    return;
+}
+
+async function repeat() {
+    const updateSelection = await inquirer.prompt([
+        {
+            type: 'confirm',
+            message: 'Return to directory?',
+            name: 'yesno',
+        }
+    ])
+
+    if (updateSelection.yesno = 1) {
+        directory();
+    } 
+
+    stop();
+    return;
+}
