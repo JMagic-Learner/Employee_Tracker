@@ -33,11 +33,17 @@ Link to video demonstration how this application works:
               
 
 Step 1.) Clone this repository.
+
 Step 2.) NPM i to install predetermined node packages.
+
 Step 3.) Replace the password in server.js with your own MySql password.
+
 Step 4.) Navigate to the DB folder, and install/run schema.sql via terminal
+
 Step 5.) In that same folder, install/run seed.sql via SOURCE seed.sql,
+
 Step 6.) Open up server.js in bash terminal, use node server.js to run the inquirer prompts
+
 Step 7.) Close out the program and restart whenever you finish a prompt path. I know, I need to work on recycling through.
              
                      
